@@ -1,4 +1,4 @@
-angular.module('financeApp', [])
+angular.module('Priyanshi', [])
     .controller('FinanceController', function ($http) {
         const vm = this;
         vm.records = [];
