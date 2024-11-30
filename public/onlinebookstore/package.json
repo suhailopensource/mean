@@ -1,0 +1,21 @@
+{
+  "name": "elearningmeanlabpractical",
+  "version": "1.0.0",
+  "description": "A simple elearning management system.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "elearning",
+    "management",
+    "system"
+  ],
+  "author": "suhail",
+  "license": "MIT",
+  "files": [
+    "public/",
+    "index.js",
+    "package.json"
+  ]
+}

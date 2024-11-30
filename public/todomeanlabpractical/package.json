@@ -1,0 +1,21 @@
+{
+  "name": "todomeanlabpractical",
+  "version": "1.0.0",
+  "description": "A simple todo management system.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "todo",
+    "management",
+    "system"
+  ],
+  "author": "suhail",
+  "license": "MIT",
+  "files": [
+    "public/",
+    "index.js",
+    "package.json"
+  ]
+}

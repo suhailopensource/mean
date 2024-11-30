@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CourseAPP">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="CourseController">
+    <h1>SELECT THE COURSE YOU WANT TO ENROLL</h1>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Faculty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cr in courses">
+          <td>{{ cr.title }}</td>
+          <td>{{ cr.description }}</td>
+          <td>{{ cr.faculty }}</td>
+          <td>
+            <button ng-click="selectCourse(cr)">Enrollt</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>
+      {{selectedCourse ? 'Enrolled in' + selectedCourse: 'Not selected in any
+      course' }}
+    </h1>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CourseAPP">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="CourseController">
+    <form ng-submit="addOrUpdateCourse()">
+      <input type="text" ng-model="course.title" placeholder="Name" required />
+      <input
+        type="text"
+        ng-model="course.description"
+        placeholder="Description"
+        required
+      />
+      <input
+        type="text"
+        ng-model="course.faculty"
+        placeholder="faculty"
+        required
+      />
+
+      <button type="submit">{{isEdit ? 'update' : 'add'}}</button>
+    </form>
+
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Faculty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cr in courses ">
+          <td>{{ cr.title }}</td>
+          <td>{{ cr.description }}</td>
+          <td>{{ cr.faculty }}</td>
+          <td>
+            <button ng-click="editCourse(cr)">Edit</button>
+            <button ng-click="deleteCourse(cr._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

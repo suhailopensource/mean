@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="EmployeeApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Employee Management System</title>
+  </head>
+  <body ng-controller="EmployeeController">
+    <h1>Employee Management System</h1>
+
+    <form ng-submit="addOrUpdateEmployee()">
+      <input type="text" ng-model="employee.name" placeholder="Name" required />
+      <input
+        type="text"
+        ng-model="employee.department"
+        placeholder="Department"
+        required
+      />
+      <input type="text" ng-model="employee.role" placeholder="Role" required />
+      <input
+        type="number"
+        ng-model="employee.salary"
+        placeholder="Salary"
+        required
+      />
+      <button type="submit">{{ isEdit ? 'Update' : 'Add' }}</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th ng-click="sort('name')">Name</th>
+          <th ng-click="sort('department')">Department</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="emp in employees | orderBy:sortKey:reverse">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>
+            <button ng-click="editEmployee(emp)">Edit</button>
+            <button ng-click="deleteEmployee(emp._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>

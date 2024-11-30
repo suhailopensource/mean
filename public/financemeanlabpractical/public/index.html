@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="financeApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="FinanceController as financeCtrl">
+    <h1>Personal Finance Tracker</h1>
+
+    <!-- Form to add income or expense -->
+    <div class="form">
+      <input
+        type="text"
+        ng-model="financeCtrl.description"
+        placeholder="Description"
+        required
+      />
+      <input
+        type="number"
+        ng-model="financeCtrl.amount"
+        placeholder="Amount"
+        required
+      />
+      <select ng-model="financeCtrl.category">
+        <option value="Salary">Salary</option>
+        <option value="Rent">Rent</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+      </select>
+      <select ng-model="financeCtrl.type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button ng-click="financeCtrl.addRecord()">Add Record</button>
+    </div>
+
+    <!-- Financial Summary -->
+    <div class="summary">
+      <h3>Financial Summary</h3>
+      <p>Total Income: {{ financeCtrl.totalIncome | currency }}</p>
+      <p>Total Expenses: {{ financeCtrl.totalExpense | currency }}</p>
+      <p>Balance: {{ financeCtrl.balance | currency }}</p>
+    </div>
+
+    <!-- Records Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="record in financeCtrl.records">
+          <td>{{ record.description }}</td>
+          <td>{{ record.amount | currency }}</td>
+          <td>{{ record.category }}</td>
+          <td>{{ record.type }}</td>
+          <td>
+            <button ng-click="financeCtrl.deleteRecord(record._id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "reactjss",
+  "version": "1.0.0",
+  "description": "lol",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "reactjss",
+    "management",
+    "system"
+  ],
+  "author": "bob",
+  "license": "MIT",
+  "files": [
+    "public/",
+    "index.js",
+    "package.json"
+  ]
+}
