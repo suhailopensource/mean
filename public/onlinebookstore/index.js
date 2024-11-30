@@ -4,7 +4,10 @@ const port = 3000;
 
 // Mock book data
 const books = [
-    { id: 1, title: 'Book 1', author: 'Author 1', price: 10, imageUrl: 'book1.jpg' },
+    { id: 1, title: 'Bob the robber', author: 'lavanya', price: 10, imageUrl: 'book1.jpg' },
+    { id: 2, title: 'Chronicles of crecent', author: 'Suhail', price: 10, imageUrl: 'book1.jpg' },
+    { id: 3, title: 'i am stupid', author: 'Sanjay', price: 10, imageUrl: 'book1.jpg' },
+    { id: 3, title: 'Vadakkan life', author: 'Rishika', price: 10, imageUrl: 'book1.jpg' },
     // ... other books
 ];
 
